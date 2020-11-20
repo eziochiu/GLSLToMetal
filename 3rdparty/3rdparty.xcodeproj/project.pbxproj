@@ -1,0 +1,147 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXFileReference section */
+		847EB8BA25678F9900BAC82E /* find-cmake.sh */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; path = "find-cmake.sh"; sourceTree = "<group>"; };
+		847EB8BB25678F9900BAC82E /* glslang */ = {isa = PBXFileReference; lastKnownFileType = folder; path = glslang; sourceTree = "<group>"; };
+		847EB8BC25678F9900BAC82E /* Makefile */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.make; path = Makefile; sourceTree = "<group>"; };
+		847EB8BD25678F9900BAC82E /* SPIRV-Cross */ = {isa = PBXFileReference; lastKnownFileType = folder; path = "SPIRV-Cross"; sourceTree = "<group>"; };
+		847EB8BE25678F9900BAC82E /* SPIRV-Tools */ = {isa = PBXFileReference; lastKnownFileType = folder; path = "SPIRV-Tools"; sourceTree = "<group>"; };
+		847EB8BF25678F9900BAC82E /* version_gte.sh */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; path = version_gte.sh; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXGroup section */
+		847EB8B425678F9900BAC82E = {
+			isa = PBXGroup;
+			children = (
+				847EB8BA25678F9900BAC82E /* find-cmake.sh */,
+				847EB8BB25678F9900BAC82E /* glslang */,
+				847EB8BC25678F9900BAC82E /* Makefile */,
+				847EB8BD25678F9900BAC82E /* SPIRV-Cross */,
+				847EB8BE25678F9900BAC82E /* SPIRV-Tools */,
+				847EB8BF25678F9900BAC82E /* version_gte.sh */,
+			);
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXLegacyTarget section */
+		847EB8B925678F9900BAC82E /* 3rdparty */ = {
+			isa = PBXLegacyTarget;
+			buildArgumentsString = "$(ACTION)";
+			buildConfigurationList = 847EB8C025678F9900BAC82E /* Build configuration list for PBXLegacyTarget "3rdparty" */;
+			buildPhases = (
+			);
+			buildToolPath = /usr/bin/make;
+			buildWorkingDirectory = "/Volumes/MacData/Project/github/OpenEmu/OpenEmu-Shaders/3rdparty";
+			dependencies = (
+			);
+			name = 3rdparty;
+			passBuildSettingsInEnvironment = 1;
+			productName = 3rdparty;
+		};
+/* End PBXLegacyTarget section */
+
+/* Begin PBXProject section */
+		847EB8B525678F9900BAC82E /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+			};
+			buildConfigurationList = 847EB8B825678F9900BAC82E /* Build configuration list for PBXProject "3rdparty" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 847EB8B425678F9900BAC82E;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				847EB8B925678F9900BAC82E /* 3rdparty */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin XCBuildConfiguration section */
+		847EB8B625678F9900BAC82E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				COPY_PHASE_STRIP = NO;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx10.6;
+			};
+			name = Debug;
+		};
+		847EB8B725678F9900BAC82E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				COPY_PHASE_STRIP = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				SDKROOT = macosx10.6;
+			};
+			name = Release;
+		};
+		847EB8C125678F9900BAC82E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COPY_PHASE_STRIP = NO;
+				DEBUGGING_SYMBOLS = YES;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_ENABLE_FIX_AND_CONTINUE = YES;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				OTHER_CFLAGS = "";
+				OTHER_LDFLAGS = "";
+				PRODUCT_NAME = 3rdparty;
+			};
+			name = Debug;
+		};
+		847EB8C225678F9900BAC82E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COPY_PHASE_STRIP = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				GCC_ENABLE_FIX_AND_CONTINUE = NO;
+				OTHER_CFLAGS = "";
+				OTHER_LDFLAGS = "";
+				PRODUCT_NAME = 3rdparty;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		847EB8B825678F9900BAC82E /* Build configuration list for PBXProject "3rdparty" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				847EB8B625678F9900BAC82E /* Debug */,
+				847EB8B725678F9900BAC82E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		847EB8C025678F9900BAC82E /* Build configuration list for PBXLegacyTarget "3rdparty" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				847EB8C125678F9900BAC82E /* Debug */,
+				847EB8C225678F9900BAC82E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 847EB8B525678F9900BAC82E /* Project object */;
+}
