@@ -13,7 +13,7 @@ int main(int argc, const char * argv[]) {
     @autoreleasepool {
         OEFilterChain *emu = [[OEFilterChain alloc] init];
         NSError *error;
-        NSString *path = @"/Users/admin/Desktop/Shaders/Blinky/Blinky.slangp";
+        NSString *path = @"/Users/admin/Desktop/Shaders/xBRZ Freescale/xBRZ Freescale.slangp";
         NSURL *pathUrl = [NSURL fileURLWithPath:path];
         NSLog(@"loading shader from %@", [pathUrl.absoluteString stringByDeletingPathExtension]);
         [emu setShaderFromURL:pathUrl error:nil];
