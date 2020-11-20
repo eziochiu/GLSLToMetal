@@ -11,7 +11,7 @@
 
 int main(int argc, const char * argv[]) {
     @autoreleasepool {
-        OEFilterChain *emu = [[OEFilterChain alloc] init];
+        OEFilterChain *emu = [[OEFilterChain alloc] initWithDevice:MTLCreateSystemDefaultDevice()];
         NSError *error;
         NSString *path = @"/Users/admin/Desktop/Shaders/xBRZ Freescale/xBRZ Freescale.slangp";
         NSURL *pathUrl = [NSURL fileURLWithPath:path];
