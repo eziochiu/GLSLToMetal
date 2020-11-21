@@ -1096,11 +1096,10 @@ static NSRect FitAspectRectIntoRect(CGSize aspectSize, CGSize size)
             @finally {
                 if (save_msl) {
                     NSString *basePath = [pass.url.absoluteString stringByDeletingPathExtension];
-                    
                     os_log_error(OE_LOG_DEFAULT, "saving metal shader files to %{public}@", basePath);
                     
                     NSError *err = nil;
-                    [vs_src writeToFile:[basePath stringByAppendingPathExtension:@"vs.metal"]
+                    [vs_src writeToFile:[[NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) objectAtIndex:0] stringByAppendingPathComponent:@"vs.metal"]
                              atomically:NO
                                encoding:NSStringEncodingConversionAllowLossy
                                   error:&err];
@@ -1109,7 +1108,7 @@ static NSRect FitAspectRectIntoRect(CGSize aspectSize, CGSize size)
                     }
                     
                     err = nil;
-                    [fs_src writeToFile:[basePath stringByAppendingPathExtension:@"fs.metal"]
+                    [fs_src writeToFile:[[NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) objectAtIndex:0] stringByAppendingPathComponent:@"fs.metal"]
                              atomically:NO
                                encoding:NSStringEncodingConversionAllowLossy
                                   error:&err];

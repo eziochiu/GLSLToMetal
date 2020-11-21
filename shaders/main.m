@@ -12,8 +12,7 @@
 int main(int argc, const char * argv[]) {
     @autoreleasepool {
         OEFilterChain *emu = [[OEFilterChain alloc] initWithDevice:MTLCreateSystemDefaultDevice()];
-        NSError *error;
-        NSString *path = @"/Users/admin/Desktop/Shaders/xBRZ Freescale/xBRZ Freescale.slangp";
+        NSString *path = @"/Users/eziochiu/Desktop/Shaders/xBRZ Freescale/xBRZ Freescale.slangp";
         NSURL *pathUrl = [NSURL fileURLWithPath:path];
         NSLog(@"loading shader from %@", [pathUrl.absoluteString stringByDeletingPathExtension]);
         [emu setShaderFromURL:pathUrl error:nil];
