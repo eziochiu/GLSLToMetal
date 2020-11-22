@@ -26,7 +26,7 @@
     id <MTLTexture> texture = [loader newTextureWithData:imagedata options:@{MTKTextureLoaderOptionSRGB:@(NO)} error:nil];
     
     
-    NSString *path = @"/Users/eziochiu/Downloads/Shaders/SABR/SABR.slangp";
+    NSString *path = @"/Users/eziochiu/Downloads/Shaders/scalehq/4xScaleHQ.slangp";
     NSURL *pathUrl = [NSURL fileURLWithPath:path];
     NSLog(@"loading shader from %@", [pathUrl.absoluteString stringByDeletingPathExtension]);
     
@@ -38,10 +38,12 @@
     [self.filterChain setShaderFromURL:pathUrl error:nil];
     
     
-    NSBitmapImageRep *imageRep = [self.filterChain captureOutputImage];
-    NSImage * image = [[NSImage alloc] initWithSize:[imageRep size]];
-    [image addRepresentation: imageRep];
-    self.imageView.image = image;
+    for (int i = 0; i < 30; i++) {
+        NSBitmapImageRep *imageRep = [self.filterChain captureOutputImage];
+        NSImage * image = [[NSImage alloc] initWithSize:[imageRep size]];
+        [image addRepresentation: imageRep];
+        self.imageView.image = image;
+    }
     // Do any additional setup after loading the view.
 }
 
