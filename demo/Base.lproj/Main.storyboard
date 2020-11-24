@@ -685,9 +685,9 @@
             <objects>
                 <windowController id="B8D-0N-5wS" sceneMemberID="viewController">
                     <window key="window" title="Window" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" releasedWhenClosed="NO" visibleAtLaunch="NO" animationBehavior="default" id="IQv-IB-iLA">
-                        <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" resizable="YES"/>
+                        <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES"/>
                         <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
-                        <rect key="contentRect" x="196" y="240" width="480" height="270"/>
+                        <rect key="contentRect" x="196" y="240" width="320" height="480"/>
                         <rect key="screenRect" x="0.0" y="0.0" width="1680" height="1027"/>
                         <connections>
                             <outlet property="delegate" destination="B8D-0N-5wS" id="98r-iN-zZc"/>
@@ -699,38 +699,49 @@
                 </windowController>
                 <customObject id="Oky-zY-oP4" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="75" y="250"/>
+            <point key="canvasLocation" x="75" y="358"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="hIz-AP-VOD">
             <objects>
                 <viewController id="XfG-lQ-9wD" customClass="ViewController" sceneMemberID="viewController">
-                    <view key="view" id="m2S-Jp-Qdl">
-                        <rect key="frame" x="0.0" y="0.0" width="480" height="270"/>
+                    <view key="view" misplaced="YES" id="m2S-Jp-Qdl">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
-                            <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="8PO-oq-m3r">
-                                <rect key="frame" x="0.0" y="0.0" width="480" height="270"/>
-                                <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="axesIndependently" image="kovshp_yz_20201120" id="olF-hj-eA3"/>
+                            <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="80f-w2-ilj">
+                                <rect key="frame" x="220" y="0.0" width="220" height="480"/>
+                                <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="axesIndependently" image="WechatIMG1684" id="jb4-Ay-mEs"/>
+                            </imageView>
+                            <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="bP8-Fo-hJg">
+                                <rect key="frame" x="0.0" y="0.0" width="220" height="480"/>
+                                <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="axesIndependently" image="WechatIMG1684" id="Niq-n7-SPa"/>
                             </imageView>
                         </subviews>
                         <constraints>
-                            <constraint firstAttribute="bottom" secondItem="8PO-oq-m3r" secondAttribute="bottom" id="E7K-N5-doP"/>
-                            <constraint firstItem="8PO-oq-m3r" firstAttribute="top" secondItem="m2S-Jp-Qdl" secondAttribute="top" id="Fdg-PC-dqX"/>
-                            <constraint firstItem="8PO-oq-m3r" firstAttribute="leading" secondItem="m2S-Jp-Qdl" secondAttribute="leading" id="lNd-Pa-eas"/>
-                            <constraint firstAttribute="trailing" secondItem="8PO-oq-m3r" secondAttribute="trailing" id="vcD-Gf-5Wf"/>
+                            <constraint firstItem="80f-w2-ilj" firstAttribute="top" secondItem="m2S-Jp-Qdl" secondAttribute="top" id="1F7-0U-VeF"/>
+                            <constraint firstAttribute="trailing" secondItem="80f-w2-ilj" secondAttribute="trailing" id="9nI-FG-Tjc"/>
+                            <constraint firstItem="80f-w2-ilj" firstAttribute="width" secondItem="bP8-Fo-hJg" secondAttribute="width" id="E5A-Tv-izS"/>
+                            <constraint firstAttribute="bottom" secondItem="bP8-Fo-hJg" secondAttribute="bottom" id="KWh-IM-1mO"/>
+                            <constraint firstItem="bP8-Fo-hJg" firstAttribute="top" secondItem="m2S-Jp-Qdl" secondAttribute="top" id="VmC-WJ-f4I"/>
+                            <constraint firstItem="80f-w2-ilj" firstAttribute="leading" secondItem="bP8-Fo-hJg" secondAttribute="trailing" id="d1L-Sn-vfU"/>
+                            <constraint firstItem="80f-w2-ilj" firstAttribute="leading" secondItem="bP8-Fo-hJg" secondAttribute="trailing" id="ipi-hh-prh"/>
+                            <constraint firstAttribute="trailing" secondItem="80f-w2-ilj" secondAttribute="trailing" id="lri-l0-P51"/>
+                            <constraint firstItem="bP8-Fo-hJg" firstAttribute="leading" secondItem="m2S-Jp-Qdl" secondAttribute="leading" id="oRl-zo-qJU"/>
+                            <constraint firstAttribute="bottom" secondItem="80f-w2-ilj" secondAttribute="bottom" id="uv6-9B-HLz"/>
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="imageView" destination="olF-hj-eA3" id="QeC-xU-8Fx"/>
+                        <outlet property="imageView1" destination="bP8-Fo-hJg" id="UFh-dI-K7z"/>
+                        <outlet property="imageView2" destination="80f-w2-ilj" id="bGg-NX-cPn"/>
                     </connections>
                 </viewController>
                 <customObject id="rPt-NT-nkU" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="75" y="655"/>
+            <point key="canvasLocation" x="75" y="1045"/>
         </scene>
     </scenes>
     <resources>
-        <image name="kovshp_yz_20201120" width="224" height="112"/>
+        <image name="WechatIMG1684" width="219.5" height="419.5"/>
     </resources>
 </document>

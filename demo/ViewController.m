@@ -11,7 +11,8 @@
 #import <MetalKit/MetalKit.h>
 
 @interface ViewController ()
-@property (weak) IBOutlet NSImageCell *imageView;
+@property (weak) IBOutlet NSImageView *imageView1;
+@property (weak) IBOutlet NSImageView *imageView2;
 @property (nonatomic, strong) OEFilterChain *filterChain;
 
 @end
@@ -22,28 +23,41 @@
     [super viewDidLoad];
     
     MTKTextureLoader *loader = [[MTKTextureLoader alloc] initWithDevice:MTLCreateSystemDefaultDevice()];
-    NSData *imagedata = [self.imageView.image TIFFRepresentation];
-    id <MTLTexture> texture = [loader newTextureWithData:imagedata options:@{MTKTextureLoaderOptionSRGB:@(NO)} error:nil];
+    NSData *imagedata1 = [self.imageView1.image TIFFRepresentation];
+    id <MTLTexture> texture1 = [loader newTextureWithData:imagedata1 options:@{MTKTextureLoaderOptionSRGB:@(NO)} error:nil];
+    
+    NSData *imagedata2 = [self.imageView2.image TIFFRepresentation];
+    id <MTLTexture> texture2 = [loader newTextureWithData:imagedata2 options:@{MTKTextureLoaderOptionSRGB:@(NO)} error:nil];
     
     
-    NSString *path = @"/Users/eziochiu/Downloads/Shaders/scalehq/4xScaleHQ.slangp";
-    NSURL *pathUrl = [NSURL fileURLWithPath:path];
-    NSLog(@"loading shader from %@", [pathUrl.absoluteString stringByDeletingPathExtension]);
+    NSString *pathLeft = @"/Users/admin/Downloads/slang-shaders/sabr/sabr.slangp";
+    NSURL *pathUrlLeft = [NSURL fileURLWithPath:pathLeft];
+    
+    NSString *pathRight = @"/Users/admin/Downloads/slang-shaders/xbrz/xbrz-freescale.slangp";
+    NSURL *pathUrlRight = [NSURL fileURLWithPath:pathRight];
     
     self.filterChain = [[OEFilterChain alloc] initWithDevice:MTLCreateSystemDefaultDevice()];
-    self.filterChain.sourceTexture = texture;
     [self.filterChain setSourceRect:self.view.bounds aspect:self.view.bounds.size];
     self.filterChain.drawableSize = [NSScreen mainScreen].frame.size;
     [self.filterChain setDefaultFilteringLinear:NO];
-    [self.filterChain setShaderFromURL:pathUrl error:nil];
     
     
-    for (int i = 0; i < 30; i++) {
-        NSBitmapImageRep *imageRep = [self.filterChain captureOutputImage];
-        NSImage * image = [[NSImage alloc] initWithSize:[imageRep size]];
-        [image addRepresentation: imageRep];
-        self.imageView.image = image;
-    }
+//    self.filterChain.sourceTexture = texture1;
+//    [self.filterChain setShaderFromURL:pathUrlLeft error:nil];
+//
+//    NSBitmapImageRep *imageRep1 = [self.filterChain captureOutputImage];
+//    NSImage * image1 = [[NSImage alloc] initWithSize:[imageRep1 size]];
+//    [image1 addRepresentation: imageRep1];
+//    self.imageView1.image = image1;
+    
+    self.filterChain.sourceTexture = texture2;
+    [self.filterChain setShaderFromURL:pathUrlRight error:nil];
+    
+    NSBitmapImageRep *imageRep2 = [self.filterChain captureOutputImage];
+    NSImage * image2 = [[NSImage alloc] initWithSize:[imageRep2 size]];
+    [image2 addRepresentation: imageRep2];
+    self.imageView2.image = image2;
+    
     // Do any additional setup after loading the view.
 }
 
